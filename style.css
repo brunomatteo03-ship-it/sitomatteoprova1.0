@@ -1,0 +1,325 @@
+/* RESET BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+    scroll-behavior: smooth; /* SCROLL SMOOTH PER TUTTI I LINK */
+}
+
+h2 {
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 97%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    background: black;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.75);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#matteo-bruno {
+    font-family: 'Impact', sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px rgba(255,255,255,0.2);
+}
+
+#hero-subtitle {
+    font-family: 'Amelina Script', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 25px;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.hero-links-text {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+/* VIDEO POPUP */
+.video-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.video-popup-content {
+    position: relative;
+    max-width: 95%;
+    max-height: 90%;
+}
+
+.video-popup video {
+    width: 100%;       /* video più piccolo */
+    max-height: 90vh; /* altezza limitata */
+    height: auto;
+    border-radius: 8px;
+}
+
+.video-popup .close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.hero-links-text a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.hero-links-text a:hover {
+    color: #999;
+    text-decoration: underline;
+}
+
+/* PORTFOLIO */
+.portfolio {
+    background-color: #111;
+    padding: 80px 10%;
+}
+
+.portfolio h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.item:hover img {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, black);
+    text-align: center;
+    font-weight: 500;
+}
+
+/* CONTATTI HOME - CENTRATO E IN COLONNA */
+.contact {
+    display: flex;
+    flex-direction: column; /* tutto in colonna */
+    align-items: center;    /* centra orizzontalmente */
+    justify-content: center;
+    text-align: center;
+    padding: 80px 10%;
+    gap: 20px;
+    background-color: #111; /* sfondo leggermente diverso */
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.contact p {
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column; /* tutti i campi in colonna */
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px; /* larghezza massima form */
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.contact button {
+    width: 100%;
+    padding: 12px;
+    background: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    border-radius: 6px;
+}
+
+.contact button:hover {
+    background: #999;
+    color: #fff;
+}
+
+/* ABOUT ME FOTO CINEMATIC */
+.about-photo {
+    display: block;
+    width: 180px;
+    max-width: 100%;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.35);
+}
+
+/* PAGE ZOOM ANIMATION */
+.page-container {
+    transform: scale(0.9);
+    opacity: 0;
+    animation: zoomInPage 0.8s forwards ease-out;
+}
+
+@keyframes zoomInPage {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    font-size: 0.9rem;
+}
+
+/* ANIMAZIONE HERO */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    #matteo-bruno {
+        font-size: 2.5rem;
+    }
+
+    #hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .about-photo {
+        width: 50%;
+    }
+
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .contact p {
+        font-size: 1rem;
+    }
+}
